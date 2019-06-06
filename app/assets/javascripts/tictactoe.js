@@ -49,5 +49,5 @@ function doTurn() {
 }
 
 function updateState() {
-  
+
 }
