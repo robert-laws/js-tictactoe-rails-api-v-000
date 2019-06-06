@@ -60,7 +60,7 @@ function doTurn(sq) {
 
 function updateState(sq) {
   var token = player();
-  $(square).text(token);
+  $(sq).text(token);
 }
 
 function resetBoard() {
