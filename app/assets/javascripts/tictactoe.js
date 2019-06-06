@@ -19,3 +19,12 @@ function updateState(sq) {
 function setMessage(string) {
   $("#message").text(string)
 }
+
+function checkWinner() {
+  var board = {}
+  var winner = false;
+
+  $("td").text(function(index, square) {
+    board[index] = square;
+  })
+}
