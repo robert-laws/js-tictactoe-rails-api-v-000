@@ -126,7 +126,7 @@ function saveGame() {
       currentGame = game.data.id;
       $("#games").append("<button id='gameid-'" + game.data.id + ">" + game.data.id + "</button><br>");
       $("#gameid-" + game.data.id).on("click", function() {
-        reloadGame(game.data.id));
+        reloadGame(game.data.id);
       })
     });
   }
