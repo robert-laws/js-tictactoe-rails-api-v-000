@@ -15,4 +15,3 @@ function updateState(sq) {
   var token = player();
   $(sq).text(token)
 }
-
