@@ -74,5 +74,17 @@ function attachListeners() {
     if (!$.text(this) && !checkWinner()) {
       doTurn(this);
     }
+  });
+
+  $("#save").on("click", function() {
+    saveGame();
+  });
+
+  $("#previous").on("click", function() {
+    showPreviousGames();
+  })
+
+  $("#clear").on("click", function() {
+    resetBoard();
   })
 }
