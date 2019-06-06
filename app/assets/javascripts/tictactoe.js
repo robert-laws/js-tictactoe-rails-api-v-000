@@ -105,6 +105,33 @@ function buttonizePreviousGame(game) {
   })
 }
 
+function saveGame() {
+  var state = [];
+  var gameData;
+
+  $("td").text((index, sq) => {
+    state.push(sq);
+  });
+
+  gameData = { state: state };
+
+  if (currentGame) {
+    $.ajax({
+      type: "PATCH",
+      url: "/games/" + currentGame},
+      data: gameData
+    });
+  } else {
+    $.post("/games", gameData, function(game) {
+      currentGame = game.data.id;
+      $("#games").append("<button id='gameid-'" + game.data.id + ">" + game.data.id + "</button><br>");
+      $("#gameid-" + game.data.id).on("click", function() {
+        reloadGame(game.data.id));
+      })
+    });
+  }
+}
+
 function reloadGame(gameId) {
   document.getElementById("message").innerHTML = "";
 
