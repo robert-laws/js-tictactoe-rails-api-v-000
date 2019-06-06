@@ -48,6 +48,7 @@ function doTurn() {
   setMessage();
 }
 
-function updateState() {
-  player();
+function updateState(sq) {
+  var token = player();
+  $(square).text(token);
 }
