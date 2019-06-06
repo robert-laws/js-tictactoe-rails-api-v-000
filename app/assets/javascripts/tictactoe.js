@@ -1,5 +1,5 @@
 // Code your JavaScript / jQuery solution here
-function player(turn) {
+function player() {
   result = ""
   if(turn % 2 == 0) {
     result = "X"
@@ -7,4 +7,8 @@ function player(turn) {
     result = "O"
   }
   return result;
+}
+
+function updateState(sq) {
+  player()
 }
