@@ -17,5 +17,5 @@ function updateState(sq) {
 }
 
 function setMessage(string) {
-  $("message").text(string)
+  $("#message").text(string)
 }
