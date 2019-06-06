@@ -47,7 +47,7 @@ function checkWinner() {
 
 function doTurn(sq) {
   updateState(sq);
-  turn++;
+  turn = turn + 1;
   if(checkWinner()) {
     saveGame();
     resetBoard();
