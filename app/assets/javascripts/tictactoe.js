@@ -41,14 +41,26 @@ function checkWinner() {
   return winner;
 }
 
-function doTurn() {
+function doTurn(sq) {
+  updateState(sq);
   turn++;
-  checkWinner();
-  updateState();
-  setMessage();
+  if(checkWinner()) {
+    saveGame();
+    resetBoard();
+  } else {
+    setMessage("Tie game.");
+    saveGame();
+    resetBoard();
+  }
 }
 
 function updateState(sq) {
   var token = player();
   $(square).text(token);
+}
+
+function resetBoard() {
+  $("td").empty();
+  turn = 0;
+  currentGame = 0;
 }
