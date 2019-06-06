@@ -45,13 +45,13 @@ function checkWinner() {
   return winner;
 }
 
-function doTurn(sq) {
-  updateState(sq);
-  turn = turn + 1;
-  if(checkWinner()) {
+function doTurn(square) {
+  updateState(square);
+  turn++;
+  if (checkWinner()) {
     saveGame();
     resetBoard();
-  } else {
+  } else if (turn === 9) {
     setMessage("Tie game.");
     saveGame();
     resetBoard();
