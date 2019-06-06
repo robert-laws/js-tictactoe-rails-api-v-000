@@ -88,3 +88,19 @@ function attachListeners() {
     resetBoard();
   })
 }
+
+function showPreviousGames() {
+  $("games").empty();
+  $.get("/games", function(savedGames) {
+    if(savedGames.data.length) {
+      savedGames.data.forEach(buttonizePreviousGame);
+    }
+  })
+}
+
+function buttonizePreviousGame(game) {
+  $("#games").append("<button id='gameid-'" + game.id + ">" + game.id + "</button><br>");
+  $("#gameid-" + game.id).on("click", function() {
+    reloadGame(game.id);
+  })
+}
